@@ -14,7 +14,7 @@ export const mdxComponents: MDXRemoteProps["components"] = {
   h5: mdx.h5,
   h6: mdx.h6,
 
-  // TODO: code block
+  pre: mdx.pre,
 
   p: mdx.p,
 
