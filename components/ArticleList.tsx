@@ -13,7 +13,7 @@ function ArticleCard(props: ArticleCardProps) {
   const date = format(new Date(props.post.date), "MMM d, yyyy");
 
   return (
-    <NextLink href={`/${id}`} passHref>
+    <NextLink href={`/articles/${id}`} passHref>
       <Link width="100%">
         <Box width="100%" borderWidth="1px" borderRadius="md" overflow="hidden">
           <VStack alignItems="start" padding={4}>
