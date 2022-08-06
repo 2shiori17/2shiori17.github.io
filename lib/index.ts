@@ -6,8 +6,8 @@ import remarkGfm from "remark-gfm";
 import { parse } from "date-fns";
 
 const ID_FORMAT = "yyyy-MM-dd";
-const EXTENSION = ".mdx";
-const POST_DIR = join(process.cwd(), "posts");
+const EXTENSION = ".md";
+const POST_DIR = join(process.cwd(), "2shiori17", "blog");
 
 export interface Metadata {
   id: string;
