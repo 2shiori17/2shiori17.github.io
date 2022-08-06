@@ -1,13 +1,13 @@
 import { basename, join } from "path";
 import { readdir, readFile } from "fs/promises";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import remarkGfm from "remark-gfm";
 import { parse } from "date-fns";
 
 const ID_FORMAT = "yyyy-MM-dd";
 const EXTENSION = ".mdx";
 const POST_DIR = join(process.cwd(), "posts");
-
-type Serialized = Awaited<ReturnType<typeof serialize>>;
 
 export interface Metadata {
   id: string;
@@ -17,10 +17,13 @@ export interface Metadata {
 
 export interface Article {
   metadata: Metadata;
-  serialized: Serialized;
+  serialized: MDXRemoteSerializeResult;
 }
 
-function getMetadata(path: string, serialized: Serialized): Metadata {
+function getMetadata(
+  path: string,
+  serialized: MDXRemoteSerializeResult
+): Metadata {
   const id = basename(path, EXTENSION);
   const date = parse(id, ID_FORMAT, new Date()).getTime();
   const title = serialized.frontmatter?.["title"];
@@ -34,7 +37,10 @@ function getMetadata(path: string, serialized: Serialized): Metadata {
 
 async function parseMDX(path: string): Promise<Article> {
   const source = (await readFile(path)).toString();
-  const serialized = await serialize(source, { parseFrontmatter: true });
+  const serialized = await serialize(source, {
+    parseFrontmatter: true,
+    mdxOptions: { remarkPlugins: [remarkGfm] },
+  });
   const metadata = getMetadata(path, serialized);
   return { metadata, serialized };
 }
