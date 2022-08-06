@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 const Index: NextPage<Props> = (props) => {
   return (
     <Layout>
-      <Box as="main">
+      <Box>
         <ArticleList articles={props.articles} />
       </Box>
     </Layout>

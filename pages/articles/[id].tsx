@@ -31,7 +31,7 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
 const Article: NextPage<Props> = (props) => {
   return (
     <Layout>
-      <Box as="main">
+      <Box>
         <MDXRemote {...props.article.serialized} components={mdxComponents} />
       </Box>
     </Layout>

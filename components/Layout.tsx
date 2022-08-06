@@ -4,21 +4,23 @@ import NextLink from "next/link";
 import {
   forwardRef,
   Box,
+  BoxProps,
+  Center,
   Container,
   Flex,
   Heading,
   HStack,
   Icon,
-  Spacer,
-  BoxProps,
   Link,
+  Spacer,
+  Text,
 } from "@chakra-ui/react";
 import { FaTwitter, FaGithub } from "react-icons/fa";
 
 const Header = forwardRef<BoxProps, "div">((props, ref) => (
   <Box ref={ref} {...props}>
-    <Container maxWidth="container.md">
-      <Flex alignItems="center" paddingY={4}>
+    <Container maxWidth="container.md" paddingY={4}>
+      <Flex alignItems="center">
         <NextLink href="/" passHref>
           <Link>
             <Heading as="p" size="md">
@@ -40,6 +42,16 @@ const Header = forwardRef<BoxProps, "div">((props, ref) => (
   </Box>
 ));
 
+const Footer = forwardRef<BoxProps, "div">((props, ref) => (
+  <Box ref={ref} {...props}>
+    <Container maxWidth="container.md" paddingY={4}>
+      <Center>
+        <Text>&copy; {new Date().getFullYear()} 2shiori17</Text>
+      </Center>
+    </Container>
+  </Box>
+));
+
 export interface LayoutProps {
   children: ReactNode;
 }
@@ -51,8 +63,13 @@ export function Layout(props: LayoutProps) {
         <meta name="robots" content="noindex,nofollow,noarchive" />
       </Head>
 
-      <Header as="header" marginBottom={8} borderBottomWidth={1} />
-      <Container maxWidth="container.md">{props.children}</Container>
+      <Box minHeight="100vh" display="grid" gridTemplateRows="auto 1fr auto">
+        <Header as="header" borderBottomWidth={1} />
+        <Container as="main" maxWidth="container.md" marginY={8}>
+          {props.children}
+        </Container>
+        <Footer as="footer" borderTopWidth={1} />
+      </Box>
     </>
   );
 }
