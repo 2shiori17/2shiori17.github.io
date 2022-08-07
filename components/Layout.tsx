@@ -15,7 +15,7 @@ import {
   Spacer,
   Text,
 } from "@chakra-ui/react";
-import { FaTwitter, FaGithub } from "react-icons/fa";
+import { FaTwitter, FaGithub, FaKeybase } from "react-icons/fa";
 
 const Header = forwardRef<BoxProps, "div">((props, ref) => (
   <Box ref={ref} {...props}>
@@ -35,6 +35,9 @@ const Header = forwardRef<BoxProps, "div">((props, ref) => (
           </Link>
           <Link href="https://github.com/2shiori17" isExternal>
             <Icon boxSize={5} as={FaGithub} />
+          </Link>
+          <Link href="https://keybase.io/2shiori17" isExternal>
+            <Icon boxSize={5} as={FaKeybase} />
           </Link>
         </HStack>
       </Flex>
