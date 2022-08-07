@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/2shiori17
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://2shiori17.github.io
+  * I am 2shiori17 (https://keybase.io/2shiori17) on keybase.
+  * I have a public key ASDq7NHC-CL-f-Zf2ib7RLiVhe2kYDSS9Nr1l4JHWK5XwAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120eaecd1c2f822fe7fe65fda26fb44b89585eda4603492f4daf597824758ae57c00a",
+      "host": "keybase.io",
+      "kid": "0120eaecd1c2f822fe7fe65fda26fb44b89585eda4603492f4daf597824758ae57c00a",
+      "uid": "82d81fe9e354c01876f51fb6c4999019",
+      "username": "2shiori17"
+    },
+    "merkle_root": {
+      "ctime": 1659838374,
+      "hash": "ac5768ab497cd478f5cfc2e0f7892a669f4091ecb5882d5fb227d96442d782c8ebc0ed646beb9b3c1f9ab41ec7bbd32a6ebe23621443ea54750c76937d6a1d87",
+      "hash_meta": "707b07917d6b767f1b75a7af7467a725ec66e681476a1c6d2db960df25a91ba3",
+      "seqno": 22980214
+    },
+    "service": {
+      "entropy": "VC+toj11T5k0YSNArJ322Jnr",
+      "hostname": "2shiori17.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.0.1"
+  },
+  "ctime": 1659838476,
+  "expire_in": 504576000,
+  "prev": "a949a104b9885ca6b5d20c1e4bb006f91b44d4427048d5c8c8572d5811a49380",
+  "seqno": 9,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg6uzRwvgi/n/mX9om+0S4lYXtpGA0kvTa9ZeCR1iuV8AKp3BheWxvYWTESpcCCcQgqUmhBLmIXKa10gweS7AG+RtE1EJwSNXIyFctWBGkk4DEIOP+upKM8cvQLT3XNNR1YUxcvMy21zMuOGnO33DgsIJvAgHCo3NpZ8RAbvcVdXV6mM5CCEODv8xA9D/AVhYJGt0kEiyDXhMJLZq4x2EC++jmgyi1viLh5sCN+FrMt3g4LfnqobPF73IKAahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIAoBDiOlMzMkB2B150k1B7HkrdSh/XZ+gAjmJV79Yrbso3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/2shiori17
+
+==================================================================
