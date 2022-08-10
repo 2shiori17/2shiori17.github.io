@@ -1,7 +1,8 @@
 import type { ReactNode, ReactElement } from "react";
 import type { MDXRemoteProps } from "next-mdx-remote";
-import { Code, chakra } from "@chakra-ui/react";
+import { Box, Code, chakra } from "@chakra-ui/react";
 import Highlight, { Language, defaultProps } from "prism-react-renderer";
+import dracula from "prism-react-renderer/themes/dracula";
 
 type Components = NonNullable<MDXRemoteProps["components"]>;
 
@@ -25,21 +26,25 @@ export const pre: NonNullable<Components["pre"]> = (props) => {
     ?.replace(/language-/, "") || "") as Language;
 
   return (
-    <Highlight {...defaultProps} code={code} language={lang}>
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <chakra.pre className={className} style={style}>
-          {tokens.map((line, i) => (
-            <chakra.div key={i} {...getLineProps({ line, key: i })}>
-              <chakra.span opacity={0.3} mr="6">
-                {i + 1}
-              </chakra.span>
-              {line.map((token, key) => (
-                <chakra.span key={i} {...getTokenProps({ token, key })} />
-              ))}
-            </chakra.div>
-          ))}
-        </chakra.pre>
-      )}
-    </Highlight>
+    <Box>
+      <Highlight {...defaultProps} code={code} language={lang} theme={dracula}>
+        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          <chakra.pre
+            className={className}
+            style={style}
+            padding={4}
+            borderRadius="md"
+          >
+            {tokens.map((line, i) => (
+              <chakra.div key={i} {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <chakra.span key={i} {...getTokenProps({ token, key })} />
+                ))}
+              </chakra.div>
+            ))}
+          </chakra.pre>
+        )}
+      </Highlight>
+    </Box>
   );
 };

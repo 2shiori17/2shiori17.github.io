@@ -8,7 +8,9 @@ export const p: NonNullable<Components["p"]> = (props) => (
 );
 
 export const strong: NonNullable<Components["strong"]> = (props) => (
-  <Text as="strong">{props.children}</Text>
+  <Text as="strong" fontWeight="semibold">
+    {props.children}
+  </Text>
 );
 
 export const em: NonNullable<Components["em"]> = (props) => (

@@ -1,7 +1,9 @@
 import type { MDXRemoteProps } from "next-mdx-remote";
 import * as mdx from "./components";
 
-export const mdxComponents: MDXRemoteProps["components"] = {
+export * from "./container";
+
+export const MDXComponents: MDXRemoteProps["components"] = {
   // ------------------------------
   //  Leaf blocks
   //  https://github.github.com/gfm/#leaf-blocks

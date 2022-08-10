@@ -6,7 +6,7 @@ type Components = NonNullable<MDXRemoteProps["components"]>;
 // TODO: internal link
 
 export const a: NonNullable<Components["a"]> = (props) => (
-  <Link href={props.href} title={props.title}>
+  <Link href={props.href} title={props.title} isExternal>
     {props.children}
   </Link>
 );

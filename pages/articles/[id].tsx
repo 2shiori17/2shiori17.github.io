@@ -1,8 +1,7 @@
 import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import type { ParsedUrlQuery } from "querystring";
 import { MDXRemote } from "next-mdx-remote";
-import { Box } from "@chakra-ui/react";
-import { Layout, mdxComponents } from "../../components";
+import { Layout, MDXComponents, MDXContainer } from "../../components";
 import { getArticles, getArticle, type Article } from "../../lib";
 
 interface Props {
@@ -31,9 +30,9 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
 const Article: NextPage<Props> = (props) => {
   return (
     <Layout>
-      <Box>
-        <MDXRemote {...props.article.serialized} components={mdxComponents} />
-      </Box>
+      <MDXContainer>
+        <MDXRemote {...props.article.serialized} components={MDXComponents} />
+      </MDXContainer>
     </Layout>
   );
 };
