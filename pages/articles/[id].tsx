@@ -1,7 +1,13 @@
 import type { NextPage, GetStaticProps, GetStaticPaths } from "next";
 import type { ParsedUrlQuery } from "querystring";
 import { MDXRemote } from "next-mdx-remote";
-import { Layout, MDXComponents, MDXContainer } from "../../components";
+import { VStack, Divider } from "@chakra-ui/react";
+import {
+  ArticleTitle,
+  Layout,
+  MDXComponents,
+  MDXContainer,
+} from "../../components";
 import { getArticles, getArticle, type Article } from "../../lib";
 
 interface Props {
@@ -30,9 +36,13 @@ export const getStaticProps: GetStaticProps<Props, Params> = async ({
 const Article: NextPage<Props> = (props) => {
   return (
     <Layout>
-      <MDXContainer>
-        <MDXRemote {...props.article.serialized} components={MDXComponents} />
-      </MDXContainer>
+      <VStack as="article" spacing={8}>
+        <ArticleTitle article={props.article} />
+        <Divider />
+        <MDXContainer>
+          <MDXRemote {...props.article.serialized} components={MDXComponents} />
+        </MDXContainer>
+      </VStack>
     </Layout>
   );
 };

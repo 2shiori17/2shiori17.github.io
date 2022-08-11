@@ -20,7 +20,7 @@ function ArticleCard(props: ArticleCardProps) {
             <Heading as="p" size="sm" noOfLines={1}>
               {title}
             </Heading>
-            <Text fontSize="sm" noOfLines={1}>
+            <Text fontSize="xs" noOfLines={1}>
               {date}
             </Text>
           </VStack>
